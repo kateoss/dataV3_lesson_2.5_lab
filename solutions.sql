@@ -15,7 +15,7 @@ SELECT MAX(length) AS max_duration, MIN(length) AS min_duration FROM film;
 
 -- 4. What's the average movie duration expressed in format (hours, minutes)?
 
-SELECT time_format(AVG(length), "%h:%i") AS average_length from film;
+SELECT CONCAT(floor(AVG(length)/60),'h ' ,avg(length)%60,'m') as average_length FROM film;
 
 -- 5. How many distinct (different) actors' last names are there?
 
